@@ -1,219 +1,160 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Acesso ao Menu YVORA</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acesso ao Menu YVORA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Cores baseadas no logotipo da YVORA */
+        :root {
+            --cor-fundo: #FAF5E6;    /* Creme suave do fundo */
+            --cor-azul-yvora: #1B2A41; /* Azul escuro do logotipo */
+            --cor-branco: #FFFFFF;
+            --cor-texto-suave: #4A4A4A;
+            --cor-aviso-fundo: #EFE6D5; /* Creme mais escuro para destaque */
+            --cor-aviso-borda: #DED0B6;
+        }
 
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+        body {
+            font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--cor-fundo); /* Fundo creme */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+            color: var(--cor-azul-yvora); /* Cor padrão do texto */
+        }
 
-  <style>
-    :root {
-      --cor-fundo: #FAF5E6;
-      --cor-azul-yvora: #1B2A41;
-      --cor-branco: #FFFFFF;
-      --cor-texto-suave: #4A4A4A;
-      --cor-aviso-fundo: #EFE6D5;
-      --cor-aviso-borda: #DED0B6;
-    }
+        .container {
+            background-color: var(--cor-branco);
+            padding: 40px 30px;
+            border-radius: 16px; /* Bordas mais arredondadas */
+            box-shadow: 0 10px 25px rgba(27, 42, 65, 0.1); /* Sombra suave com tom azulado */
+            text-align: center;
+            max-width: 420px;
+            width: 100%;
+        }
 
-    body {
-      font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
-      background-color: var(--cor-fundo);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      margin: 0;
-      padding: 20px;
-      box-sizing: border-box;
-      color: var(--cor-azul-yvora);
-    }
+        h1 {
+            color: var(--cor-azul-yvora);
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: 1px; /* Espaçamento elegante entre letras */
+            text-transform: uppercase; /* Letras maiúsculas como no logo */
+        }
 
-    .container {
-      background-color: var(--cor-branco);
-      padding: 40px 30px;
-      border-radius: 16px;
-      box-shadow: 0 10px 25px rgba(27, 42, 65, 0.10);
-      text-align: center;
-      max-width: 420px;
-      width: 100%;
-    }
+        p.intro {
+            color: var(--cor-texto-suave);
+            font-size: 16px;
+            margin-bottom: 35px;
+            line-height: 1.6;
+        }
 
-    h1 {
-      color: var(--cor-azul-yvora);
-      font-size: 28px;
-      font-weight: 700;
-      margin-bottom: 18px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      line-height: 1.1;
-    }
+        .aviso-wifi {
+            background-color: var(--cor-aviso-fundo);
+            color: var(--cor-azul-yvora);
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 15px;
+            margin-bottom: 30px;
+            border: 1px solid var(--cor-aviso-borda);
+            text-align: left; /* Texto alinhado à esquerda para facilitar leitura */
+        }
 
-    .sub {
-      color: var(--cor-azul-yvora);
-      font-size: 14px;
-      font-weight: 600;
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
-      margin-bottom: 18px;
-      opacity: 0.9;
-    }
+        .aviso-wifi strong {
+            font-weight: 600;
+        }
 
-    .aviso-wifi {
-      background-color: var(--cor-aviso-fundo);
-      color: var(--cor-azul-yvora);
-      padding: 16px;
-      border-radius: 12px;
-      font-size: 15px;
-      margin-bottom: 22px;
-      border: 1px solid var(--cor-aviso-borda);
-      text-align: left;
-    }
+        .wifi-details {
+            margin-top: 10px;
+            display: block;
+            font-family: monospace; /* Fonte monoespaçada para os dados da rede */
+            background: rgba(255,255,255,0.5);
+            padding: 10px;
+            border-radius: 6px;
+        }
 
-    .aviso-wifi strong {
-      font-weight: 700;
-    }
+        .btn-acesso {
+            display: inline-block;
+            width: 100%;
+            padding: 18px;
+            background-color: var(--cor-azul-yvora); /* Azul do botão */
+            color: var(--cor-branco);
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 10px rgba(27, 42, 65, 0.2);
+            -webkit-tap-highlight-color: transparent;
+        }
 
-    .wifi-details {
-      margin-top: 10px;
-      display: block;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
-      background: rgba(255,255,255,0.55);
-      padding: 10px;
-      border-radius: 10px;
-      line-height: 1.5;
-    }
-
-    p.intro {
-      color: var(--cor-texto-suave);
-      font-size: 16px;
-      margin-bottom: 22px;
-      line-height: 1.6;
-    }
-
-    .btn-acesso {
-      display: inline-block;
-      width: 100%;
-      padding: 18px;
-      background-color: var(--cor-azul-yvora);
-      color: var(--cor-branco);
-      text-decoration: none;
-      font-size: 18px;
-      font-weight: 700;
-      border-radius: 12px;
-      transition: all 0.2s ease;
-      box-sizing: border-box;
-      letter-spacing: 1px;
-      box-shadow: 0 6px 14px rgba(27, 42, 65, 0.20);
-      border: 0;
-      cursor: pointer;
-      user-select: none;
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    .btn-acesso:active {
-      transform: translateY(1px);
-    }
-
-    .diagnostico {
-      margin-top: 16px;
-      text-align: left;
-      font-size: 12px;
-      color: var(--cor-texto-suave);
-      line-height: 1.5;
-      opacity: 0.95;
-    }
-
-    .fallback {
-      margin-top: 12px;
-      display: none;
-      text-align: left;
-      font-size: 13px;
-      color: var(--cor-azul-yvora);
-      background: rgba(27,42,65,0.05);
-      border: 1px dashed rgba(27,42,65,0.25);
-      padding: 12px;
-      border-radius: 12px;
-      word-break: break-all;
-    }
-
-    .fallback code {
-      display: block;
-      margin-top: 8px;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
-      background: rgba(255,255,255,0.65);
-      padding: 8px 10px;
-      border-radius: 10px;
-    }
-  </style>
+        .btn-acesso:hover {
+            background-color: #2C3E5A; /* Um tom ligeiramente mais claro ao passar o mouse */
+            transform: translateY(-2px); /* Efeito de levantar */
+            box-shadow: 0 6px 15px rgba(27, 42, 65, 0.3);
+        }
+    </style>
 </head>
-
 <body>
-  <div class="container">
-    <h1>YVORA</h1>
-    <div class="sub">MEAT & CHEESE LAB</div>
+    <div class="container">
+        <h1>YVORA<br><span style="font-size: 16px; font-weight: 600;">MEAT & CHEESE LAB</span></h1>
 
-    <div class="aviso-wifi">
-      <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px;">
-        <span style="font-size: 22px;">⚠️</span>
-        <strong>Atenção Necessária:</strong>
-      </div>
+        <div class="aviso-wifi">
+            <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                <!-- CORRIGIDO: faltava o ">" antes do emoji -->
+                <span style="font-size: 24px; margin-right: 10px;">⚠️</span>
+                <strong>Atenção Necessária:</strong>
+            </div>
+            Você precisa estar conectado à nossa rede Wi-Fi exclusiva para acessar o menu.
+            <div class="wifi-details">
+                Rede: <strong>YVORA_M&C</strong><br>
+                Senha: <strong>XXXXXXXX</strong>
+            </div>
+        </div>
 
-      Você precisa estar conectado à nossa rede Wi-Fi exclusiva para acessar o menu.
+        <p class="intro">Clique no botão abaixo após se conectar para visualizar nosso menu completo.</p>
 
-      <div class="wifi-details">
-        Rede: <strong>YVORA_M&C</strong><br>
-        Senha: <strong>XXXXXXXX</strong>
-      </div>
+        <!-- BOTAO: href será setado via JS para Opção C -->
+        <a id="btnMenu" href="#" class="btn-acesso" target="_blank" rel="noopener">
+            ACESSAR MENU
+        </a>
     </div>
 
-    <p class="intro">Clique no botão abaixo após se conectar para visualizar nosso menu completo.</p>
+    <script>
+        // Opção C: roteamento por unidade
+        // Hoje: 1 unidade só
+        const UNITS = {
+            pinheiros: "http://192.168.15.64:8750"
+        };
 
-    <a id="btnMenu" class="btn-acesso" href="#" target="_blank" rel="noopener">
-      ACESSAR MENU
-    </a>
+        // Para o começo, se não vier unit no link, assume pinheiros
+        const DEFAULT_UNIT = "pinheiros";
 
-    <div id="fallback" class="fallback">
-      Se não abrir automaticamente, copie e cole o link abaixo no navegador:
-      <code id="menuUrlText"></code>
-    </div>
+        const params = new URLSearchParams(window.location.search);
+        const unitParam = params.get("unit");
+        const unit = (unitParam ? unitParam : DEFAULT_UNIT).toLowerCase();
 
-    <div class="diagnostico">
-      Se estiver no Wi-Fi correto e não abrir:
-      <br>1) o app precisa rodar com: <strong>--server.address 0.0.0.0</strong>
-      <br>2) liberar no Firewall do Windows a porta <strong>8750</strong> (entrada TCP)
-    </div>
-  </div>
+        const url = UNITS[unit] || UNITS[DEFAULT_UNIT];
 
-  <script>
-    // Mapeamento por unidade (Opção C). Hoje só 1 unidade.
-    const UNITS = {
-      pinheiros: "http://192.168.15.64:8750"
-    };
+        const btn = document.getElementById("btnMenu");
+        btn.href = url;
 
-    // Para 1 unidade no começo, se não vier unit, assumimos pinheiros
-    const DEFAULT_UNIT = "pinheiros";
-
-    const params = new URLSearchParams(window.location.search);
-    const unitRaw = params.get("unit");
-    const unit = (unitRaw ? unitRaw : DEFAULT_UNIT).toLowerCase();
-
-    const btn = document.getElementById("btnMenu");
-    const fallback = document.getElementById("fallback");
-    const menuUrlText = document.getElementById("menuUrlText");
-
-    const url = UNITS[unit] || UNITS[DEFAULT_UNIT];
-
-    // Configura o botão com o link correto
-    btn.href = url;
-    menuUrlText.textContent = url;
-
-    // Em alguns celulares, o usuário sente que não aconteceu nada.
-    // Mostramos o fallback com o link sempre que clicar.
-    btn.addEventListener("click", () => {
-      fallback.style.display = "block";
-    });
-  </script>
+        // Segurança extra: se por algum motivo não tiver url, bloqueia e avisa
+        if (!url) {
+            btn.href = "#";
+            btn.addEventListener("click", (e) => {
+                e.preventDefault();
+                alert("Link da unidade não configurado. Use ?unit=pinheiros");
+            });
+        }
+    </script>
 </body>
 </html>
